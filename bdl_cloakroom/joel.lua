@@ -20,35 +20,20 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 --[ BUTTON ]-----------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterNUICallback("ButtonClick",function(data,cb)
-	if data == "default" then
-		TriggerServerEvent("default")
+RegisterNUICallback("ButtonClickH",function(data,cb)
 	
-	elseif data == "default2" then
-		TriggerServerEvent("default2")
-
-	elseif data == "gtm" then
-		TriggerServerEvent("gtm")
-
-	elseif data == "tactical" then
-		TriggerServerEvent("tactical")
-
-	elseif data == "k9trainor" then
-		TriggerServerEvent("k9trainor")
-
-	elseif data == "transit" then
-		TriggerServerEvent("transit")
-		
-	elseif data == "csi" then
-		TriggerServerEvent("csi")
-
-	elseif data == "off-uniform" then
-		TriggerServerEvent("off-uniform")
-
-	elseif data == "fechar" then
+	if data == "fechar" then
 		ToggleActionMenu()
+	else
+		if(data == "off-uniform") then
+			return TriggerServerEvent("bdl_fixed:despir");
+		end
+		TriggerServerEvent("bdl_fixed:vestir",data);
 	end
+
+	
 end)
+--------
 -----------------------------------------------------------------------------------------------------------------------------------------
 --[ LOCAIS ]-----------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------
